@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package wallet;
+
+service WalletService {
+  rpc ProcessRefund (RefundRequest) returns (RefundResponse);
+}
+
+message RefundRequest {
+  string user_id = 1;
+  double amount = 2;
+}
+
+message RefundResponse {
+  bool success = 1;
+  string message = 2;
+}

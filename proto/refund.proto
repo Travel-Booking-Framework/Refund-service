@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package refund;
+
+service RefundService {
+  rpc ProcessRefund (RefundRequest) returns (RefundResponse);
+}
+
+message RefundRequest {
+  string transaction_id = 1;
+  double amount = 2;
+  string reason = 3;
+}
+
+message RefundResponse {
+  bool success = 1;
+  string message = 2;
+}
